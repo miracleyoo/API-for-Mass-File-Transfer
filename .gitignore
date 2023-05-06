@@ -1,0 +1,5 @@
+backup/
+*error_files*
+*done_files*
+/tmp/
+credential*
