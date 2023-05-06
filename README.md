@@ -1,6 +1,8 @@
 # UCSD Data Planet Dataset Batch Uploader
 ## Overview
-This is a script used to upload your dataset, especially large dataset to UCSD Data Planet. It will automatically compress each subfoler in your dataset to zip or 7z file, and upload them to the specified remote dataset repo. It is also designed to support multi-process uploading, which can significantly speed up the uploading process. However, this function requires support from the server end, which is not available at this moment. 
+This is a script used to upload your dataset, especially large dataset to UCSD Data Planet. It will automatically compress each subfoler in your dataset to zip or 7z file, and upload them to the specified remote dataset repo. Also, the script provides function to resume uploading from the last uploaded file, which can be useful when you have a large dataset and the uploading process is interrupted.
+
+It is also designed to support multi-process uploading, which can significantly speed up the uploading process. However, this function requires support from the server end, which is not available at this moment. 
 
 This script can run on Linux, Windows, and MacOS. 
 

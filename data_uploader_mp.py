@@ -194,15 +194,11 @@ if __name__ == "__main__":
     parser.add_argument(
         '--key',type=str,
         help='Get this token from your dataverse account.\n Format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
-        # required=False,
-        # default='87a80832-fa73-40c4-8e71-2e9183782571',
     )
 
     parser.add_argument(
         '--doi',type=str,
         help='Persistent ID of your dataset. Get this from your dataset metadata. \n Format: doi:xx.xxxx/xxx/xxxxxx',
-        # required=False,
-        # default='doi:10.5072/FK2/STZHOD',
     )
     parser.add_argument(
         '-f', '--file',type=str,
@@ -239,14 +235,6 @@ if __name__ == "__main__":
         '-s', '--silent_upload', action='store_true',
         help='Do not print upload progress.'
     )
-
-    # # add arg for compress_type
-    # parser.add_argument(
-    #     '-c', '--compress_type', type=str,
-    #     help='The compression type to use. Default is zip.',
-    #     default='zip',
-    #     choices=['zip', '7z']
-    # )
 
     args = parser.parse_args()
     args.compress_type = '7z' if args.use_7z else 'zip'
