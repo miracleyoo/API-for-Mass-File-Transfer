@@ -240,15 +240,16 @@ if __name__ == "__main__":
         help='Do not print upload progress.'
     )
 
-    # add arg for compress_type
-    parser.add_argument(
-        '-c', '--compress_type', type=str,
-        help='The compression type to use. Default is zip.',
-        default='zip',
-        choices=['zip', '7z']
-    )
+    # # add arg for compress_type
+    # parser.add_argument(
+    #     '-c', '--compress_type', type=str,
+    #     help='The compression type to use. Default is zip.',
+    #     default='zip',
+    #     choices=['zip', '7z']
+    # )
 
     args = parser.parse_args()
+    args.compress_type = '7z' if args.use_7z else 'zip'
 
     # Check whether credential.yaml exists
     if os.path.isfile('credential.yaml'):
@@ -265,7 +266,7 @@ if __name__ == "__main__":
     # Check whether key and doi are set
     assert args.key is not None, "Please set --key or create a credential.yaml file."
     assert args.doi is not None, "Please set --doi or create a credential.yaml file."
-    
+
     if args.process_num > 1:
         args.silent_upload = True
 
